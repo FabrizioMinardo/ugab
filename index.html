@@ -9,17 +9,22 @@
 </head>
 <body>
   <header class="header">
+    <img src="logo.png" alt="UGAB" class="logo">
     <h1>UGAB</h1>
     <p>Restaurante Armenio</p>
   </header>
 
   <main class="container">
     <h2>¡Bienvenido!</h2>
-    <p>Escanea el QR y usa los botones para solicitar atención.</p>
+    <p>Use los botones para solicitar atención.</p>
     
     <div class="buttons">
-      <button id="call-waiter" class="button">Llamar al mozo</button>
-      <button id="request-bill" class="button">Pedir la cuenta</button>
+      <button id="call-waiter" class="button">
+        🛎️ Llamar al mozo
+      </button>
+      <button id="request-bill" class="button">
+        💰 Pedir la cuenta
+      </button>
     </div>
   </main>
 
@@ -30,7 +35,7 @@
   <script>
     const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
     const TELEGRAM_CHAT_ID = '6126902636';
-    const tableNumber = 3; // Cambia esto según la mesa del QR
+    const tableNumber = 3;
 
     const sendTelegramMessage = async (message) => {
       const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
