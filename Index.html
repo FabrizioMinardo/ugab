@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificar Mozo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: #00006E;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #00008B;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Necesitamos un Mozo!</h1>
+    <p>Presiona el botón para notificar a un empleado del restaurante.</p>
+    <button onclick="sendNotification()">Notificar Mozo</button>
+    <script>
+        function sendNotification() {
+            fetch('https://api.telegram.org/bot<7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y>/sendMessage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: '6126902636',
+                    text: '📢 Aviso: La mesa N necesita asistencia.'
+                })
+            }).then(response => {
+                if (response.ok) {
+                    alert('¡Mozo notificado correctamente!');
+                } else {
+                    alert('Error al notificar. Intenta de nuevo.');
+                }
+            }).catch(() => {
+                alert('Hubo un problema al conectar con el servidor.');
+            });
+        }
+    </script>
+</body>
+</html>
