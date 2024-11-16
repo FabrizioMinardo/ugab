@@ -35,7 +35,10 @@
   <script>
     const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
     const TELEGRAM_CHAT_ID = '6126902636';
-    const tableNumber = 3;
+
+    // Extraer el número de mesa desde la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const tableNumber = urlParams.get('table') || 'Desconocida'; // Por defecto, "Desconocida"
 
     const sendTelegramMessage = async (message) => {
       const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;

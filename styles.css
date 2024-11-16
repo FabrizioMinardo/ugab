@@ -3,95 +3,94 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background: linear-gradient(135deg, #f9f9f9, #ececec);
+    color: #e8e8e8;
+    background: linear-gradient(135deg, #000040, #00006E); /* Azul oscuro */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  
-  /* Header */
-  .header {
-    background-color: #800000; /* Rojo oscuro */
+}
+
+/* Header */
+.header {
+    background-color: #00006E; /* Azul oscuro */
     color: #fff;
     text-align: center;
     padding: 1.5em 1em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .header .logo {
+}
+
+.header .logo {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-bottom: 1em;
-  }
-  
-  .header h1 {
+}
+
+.header h1 {
     font-size: 2.5em;
     margin: 0;
     font-weight: 700;
-  }
-  
-  .header p {
+}
+
+.header p {
     font-size: 1.2em;
     margin-top: 0.5em;
-  }
-  
-  /* Main container */
-  .container {
+}
+
+/* Main container */
+.container {
     flex: 1;
     text-align: center;
     padding: 2em;
-  }
-  
-  .container h2 {
+}
+
+.container h2 {
     font-size: 2.2em;
-    color: #333;
+    color: #e8e8e8;
     margin-bottom: 0.8em;
-  }
-  
-  .container p {
+}
+
+.container p {
     font-size: 1.2em;
     margin-bottom: 2em;
-    color: #555;
-  }
-  
-  /* Buttons */
-  .buttons {
+    color: #d0d0d0;
+}
+
+/* Buttons */
+.buttons {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
     align-items: center;
-  }
-  
-  .button {
+}
+
+.button {
     font-size: 1.4em;
     padding: 0.8em 1.8em;
-    background-color: #800000; /* Rojo oscuro */
+    background-color: #00006E; /* Azul oscuro */
     color: #fff;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #a00000; /* Un rojo más claro */
+}
+
+.button:hover {
+    background-color: #000080; /* Azul más claro */
     transform: translateY(-2px);
-  }
-  
-  .button:focus {
-    outline: 3px solid #ffb700; /* Amarillo cálido */
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #333;
-    color: #fff;
+}
+
+.button:focus {
+    outline: 3px solid #FFD700; /* Amarillo cálido */
+}
+
+/* Footer */
+.footer {
+    background-color: #000040;
+    color: #ccc;
     text-align: center;
     padding: 1em 0;
     font-size: 0.9em;
     margin-top: auto;
-  }
-  
+}
