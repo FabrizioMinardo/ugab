@@ -25,20 +25,26 @@
       <button id="request-bill" class="button">
         💰 Pedir la cuenta
       </button>
+      <button id="leave-review" class="button">
+        ✍️ Dejar una opinión
+      </button>
     </div>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2024 UGAB - Todos los derechos reservados.</p>
+    <div class="footer-content">
+      <p class="left">&copy; 2025 UGAB - Todos los derechos reservados.</p>
+      <p class="right">Desarrollado por: Fabrizio Minardo</p>
+    </div>
   </footer>
-
+  
   <script>
     const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
     const TELEGRAM_CHAT_ID = '6126902636';
 
     // Extraer el número de mesa desde la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const tableNumber = urlParams.get('table') || 'Desconocida'; // Por defecto, "Desconocida"
+    const tableNumber = urlParams.get('table') || 'Desconocida'; 
 
     const sendTelegramMessage = async (message) => {
       const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
@@ -69,6 +75,13 @@
     document.getElementById('request-bill').addEventListener('click', () => {
       const message = `💰 Mesa ${tableNumber} solicita la cuenta.`;
       sendTelegramMessage(message);
+    });
+
+    // Cargar el script del widget dinámicamente
+    document.getElementById('leave-review').addEventListener('click', () => {
+      const script = document.createElement('script');
+      script.src = 'https://widget.trustmary.com/rBOcBKxMGd';
+      document.body.appendChild(script);
     });
   </script>
 </body>
