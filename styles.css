@@ -48,7 +48,6 @@ body {
 .container {
     text-align: center;
     padding: 2em;
-    flex-grow: 1; // Permite que el contenido principal se expanda para evitar que el pie de página se superponga
 }
 
 .container h2 {
@@ -107,7 +106,7 @@ body {
 .widget-container {
     display: none;
     margin-top: 20px;
-    flex-grow: 1; // Permite que el widget se expanda y no comprima el contenido
+    flex-grow: 1;
 }
 
 /* Class to show the widget */
@@ -126,7 +125,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    position: relative; // Eliminamos 'sticky' para un posicionamiento más flexible
+    position: sticky;
+    bottom: 0;
 }
 
 /* Footer content */
@@ -158,4 +158,9 @@ body {
     .button {
         font-size: 1.2em;
     }
+}
+
+/* Sticky Footer when widget is visible */
+body.show-widget .footer {
+    position: relative;
 }
