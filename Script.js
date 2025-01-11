@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('leave-review').addEventListener('click', () => {
-    // Abre el widget de Trustmary en una nueva ventana/pestaña
-    window.open('https://widget.trustmary.com/rBOcBKxMGd', '_blank');
+    // Redirige al usuario al widget de Trustmary para dejar una reseña en Google
+    window.location.href = 'https://widget.trustmary.com/rBOcBKxMGd';
 });
 });
