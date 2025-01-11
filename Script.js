@@ -38,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sendTelegramMessage(message);
   });
 
-  // Evento para abrir el widget de Trustmary al hacer click en "Dejar una opinión"
   document.getElementById('leave-review').addEventListener('click', () => {
-    // Mostrar el widget de Trustmary cuando se presiona el botón
-    TrustmaryWidget.show(); // Este es el método para mostrar el widget
+    window.open('https://g.co/kgs/qXsYpmL', '_blank');
   });
 });
