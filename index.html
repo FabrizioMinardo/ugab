@@ -6,6 +6,7 @@
   <title>UGAB - Restaurante Armenio</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://widget.trustmary.com/rBOcBKxMGd"></script> <!-- Agregar el script del widget aquí -->
 </head>
 <body>
   <header class="header">
@@ -16,6 +17,7 @@
 
   <main class="container">
     <h2>¡Bienvenido!</h2>
+    <p>Hoy tu número de mesa es: <span id="table-number">Desconocida</span></p>
     <p>Use los botones para solicitar atención.</p>
     
     <div class="buttons">
@@ -26,11 +28,13 @@
         💰 Pedir la cuenta
       </button>
       <button id="leave-review" class="button">
-        ✍️ Dejar una opinión
+        🌟 Dejar una opinión
       </button>
     </div>
 
-    <p id="status-message" class="status-message" style="display: none;">¡Solicitud enviada correctamente!</p>
+    <div id="status-message" class="status-message" style="display: none;">
+      Su solicitud ha sido recibida. Pronto lo atenderemos.
+    </div>
   </main>
 
   <footer class="footer">
