@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Extraer el número de mesa desde la URL
   const urlParams = new URLSearchParams(window.location.search);
   const tableNumber = urlParams.get('table') || 'Desconocida';
-  document.getElementById('table-number').textContent = tableNumber;
+
+  let widgetLoaded = false;
 
   const sendTelegramMessage = async (message) => {
     const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
@@ -37,4 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = `💰 Mesa ${tableNumber} solicita la cuenta.`;
     sendTelegramMessage(message);
   });
+
+  document.getElementById('leave-review').addEventListener('click', () => {
+    if (!widgetLoaded) {
+      loadReviewWidget();
+      widgetLoaded = true;
+    }
+  });
+
+  const loadReviewWidget = () => {
+    const script = document.createElement('script');
+    script.src = 'https://widget.trustmary.com/1Gxx6dyMO';
+    script.async = true;
+    document.body.appendChild(script);
+  };
 });

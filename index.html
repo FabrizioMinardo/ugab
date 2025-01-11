@@ -8,30 +8,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <img src="Imagenes/logougab.png" alt="UGAB" class="logo">
-    <h1>UGAB</h1>
-    <p>Restaurante Armenio</p>
-  </header>
+  <div class="main-wrapper">
+    <header class="header">
+      <img src="Imagenes/logougab.png" alt="UGAB" class="logo">
+      <h1>UGAB</h1>
+      <p>Restaurante Armenio</p>
+    </header>
 
-  <main class="container">
-    <h2>¡Bienvenido!</h2>
-    <p>Hoy tu número de mesa es: <span id="table-number">Desconocida</span></p>
-    <p>Use los botones para solicitar atención.</p>
-    
-    <div class="buttons">
-      <button id="call-waiter" class="button">
-        🛎️ Llamar al mozo
-      </button>
-      <button id="request-bill" class="button">
-        💰 Pedir la cuenta
-      </button>
-    </div>
+    <main class="container">
+      <h2>¡Bienvenido!</h2>
+      <p>Use los botones para solicitar atención.</p>
+      
+      <div class="buttons">
+        <button id="call-waiter" class="button">
+          🛎️ Llamar al mozo
+        </button>
+        <button id="request-bill" class="button">
+          💰 Pedir la cuenta
+        </button>
+        <button id="leave-review" class="button">
+          ✍️ Dejar una opinión
+        </button>
+      </div>
 
-    <div id="status-message" class="status-message" style="display: none;">
-      Su solicitud ha sido recibida. Pronto lo atenderemos.
-    </div>
-  </main>
+      <p id="status-message" class="status-message" style="display: none;">¡Solicitud enviada correctamente!</p>
+
+      <div id="widget-container" class="widget-container"></div>
+    </main>
+  </div>
 
   <footer class="footer">
     <div class="footer-content">
