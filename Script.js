@@ -36,5 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = `💰 Mesa ${tableNumber} solicita la cuenta.`;
       sendTelegramMessage(message);
     });
+    document.getElementById('leave-review').addEventListener('click', () => {
+        window.open('https://widget.trustmary.com/rBOcBKxMGd', '_blank');
+      });      
   
   });
