@@ -77,15 +77,9 @@
       sendTelegramMessage(message);
     });
 
-    // Cargar el widget
+    // Redirigir al hacer clic en "Dejar una opinión"
     document.getElementById('leave-review').addEventListener('click', () => {
-      // Verificacion del script
-      if (!document.getElementById('trustmary-widget')) {
-        const script = document.createElement('script');
-        script.src = 'https://widget.trustmary.com/rBOcBKxMGd';
-        script.id = 'trustmary-widget'; // Asigna un ID para evitar recargar el script
-        document.body.appendChild(script);
-      }
+      window.open('https://widget.trustmary.com/rBOcBKxMGd', '_blank');
     });
   </script>
 </body>
