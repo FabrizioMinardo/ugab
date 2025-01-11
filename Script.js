@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Extraer el número de mesa desde la URL
     const urlParams = new URLSearchParams(window.location.search);
     const tableNumber = urlParams.get('table') || 'Desconocida';
-    document.getElementById('table-number').textContent = tableNumber;
   
     const sendTelegramMessage = async (message) => {
       const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
@@ -42,4 +41,3 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open('https://g.co/kgs/qXsYpmL', '_blank');
     });
   });
-  
