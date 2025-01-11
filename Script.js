@@ -38,6 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     document.getElementById('leave-review').addEventListener('click', () => {
-      window.open('https://g.co/kgs/qXsYpmL', '_blank');
+      window.open('https://widget.trustmary.com/rBOcBKxMGd', '_blank');
     });
   });
