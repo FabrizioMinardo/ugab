@@ -106,7 +106,6 @@ body {
 .widget-container {
     display: none;
     margin-top: 20px;
-    flex-grow: 1;
 }
 
 /* Class to show the widget */
@@ -125,8 +124,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    position: sticky;
-    bottom: 0;
+    margin-top: auto; /* Ensures the footer stays at the bottom */
 }
 
 /* Footer content */
@@ -139,10 +137,6 @@ body {
 .footer .left,
 .footer .right {
     margin: 0;
-}
-
-.footer .right {
-    text-align: right;
 }
 
 /* Responsive Design */
@@ -158,9 +152,4 @@ body {
     .button {
         font-size: 1.2em;
     }
-}
-
-/* Sticky Footer when widget is visible */
-body.show-widget .footer {
-    position: relative;
 }

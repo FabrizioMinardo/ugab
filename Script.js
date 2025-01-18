@@ -45,11 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
       widgetLoaded = true;
     }
   });
-
+  
   const loadReviewWidget = () => {
+    const widgetContainer = document.getElementById('widget-container');
+    widgetContainer.classList.add('widget-visible');
     const script = document.createElement('script');
     script.src = 'https://widget.trustmary.com/1Gxx6dyMO';
     script.async = true;
-    document.body.appendChild(script);
+    widgetContainer.appendChild(script);
   };
+  
 });
