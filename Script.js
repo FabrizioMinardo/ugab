@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let widgetLoaded = false;
 
-  const sendTelegramMessage = async (message) => {
+  const sendTelegramMessage = async (message, statusMessage) => {
     const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
 
     try {
@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Error al enviar el mensaje.');
       }
 
-      document.getElementById('status-message').style.display = 'block';
+      const statusElement = document.getElementById('status-message');
+      statusElement.textContent = statusMessage;
+      statusElement.style.display = 'block';
     } catch (error) {
       alert('Hubo un problema al conectar con el servidor.');
       console.error(error);
@@ -31,12 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('call-waiter').addEventListener('click', () => {
     const message = `🛎️ Mesa ${tableNumber} necesita un mozo.`;
-    sendTelegramMessage(message);
+    const statusMessage = '¡Listo! El mozo ya lo atenderá.';
+    sendTelegramMessage(message, statusMessage);
   });
 
   document.getElementById('request-bill').addEventListener('click', () => {
     const message = `💰 Mesa ${tableNumber} solicita la cuenta.`;
-    sendTelegramMessage(message);
+    const statusMessage = 'El mozo pronto le traerá la cuenta. Gracias por elegirnos.';
+    sendTelegramMessage(message, statusMessage);
   });
 
   document.getElementById('leave-review').addEventListener('click', () => {
@@ -45,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       widgetLoaded = true;
     }
   });
-  
+
   const loadReviewWidget = () => {
     const widgetContainer = document.getElementById('widget-container');
     widgetContainer.classList.add('widget-visible');
@@ -54,5 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
     script.async = true;
     widgetContainer.appendChild(script);
   };
-  
 });

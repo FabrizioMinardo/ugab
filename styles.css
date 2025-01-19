@@ -1,4 +1,5 @@
 /* General */
+/* Estilo global para el cuerpo del documento */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -7,10 +8,11 @@ body {
     background: linear-gradient(135deg, #000040, #00006E);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
 }
 
 /* Main wrapper */
+/* Contenedor principal para estructurar el contenido */
 .main-wrapper {
     flex: 1;
     display: flex;
@@ -18,6 +20,7 @@ body {
 }
 
 /* Header */
+/* Estilo para el encabezado de la página */
 .header {
     background-color: #00006E;
     color: #fff;
@@ -29,14 +32,14 @@ body {
 .header .logo {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 50%; /* Hace que la imagen sea circular */
     margin-bottom: 1em;
 }
 
 .header h1 {
     font-size: 2.5em;
     margin: 0;
-    font-weight: 700;
+    font-weight: 700; /* Negrita fuerte para el título */
 }
 
 .header p {
@@ -45,6 +48,7 @@ body {
 }
 
 /* Main container */
+/* Contenedor principal para el contenido */
 .container {
     text-align: center;
     padding: 2em;
@@ -63,6 +67,7 @@ body {
 }
 
 /* Buttons */
+/* Estilo para los botones de acción */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -83,15 +88,16 @@ body {
 }
 
 .button:hover {
-    background-color: #000080;
-    transform: translateY(-2px);
+    background-color: #000080; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
 }
 
 .button:focus {
-    outline: 3px solid #FFD700;
+    outline: 3px solid #FFD700; /* Enfasis claro cuando se enfoca */
 }
 
 /* Status Message */
+/* Mensaje de estado para retroalimentación del usuario */
 .status-message {
     margin-top: 2em;
     padding: 1em;
@@ -103,17 +109,20 @@ body {
 }
 
 /* Widget container for dynamic insertion */
+/* Contenedor para widgets dinámicos */
 .widget-container {
     display: none;
     margin-top: 20px;
 }
 
 /* Class to show the widget */
+/* Clase para mostrar el widget cuando sea necesario */
 .widget-visible {
     display: block;
 }
 
 /* Footer */
+/* Estilo para el pie de página */
 .footer {
     background-color: #000040;
     color: #ccc;
@@ -124,10 +133,11 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: auto; /* Ensures the footer stays at the bottom */
+    margin-top: auto; /* Mantiene el pie de página en la parte inferior */
 }
 
 /* Footer content */
+/* Contenido del pie de página */
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -140,6 +150,7 @@ body {
 }
 
 /* Responsive Design */
+/* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 2em;
@@ -151,5 +162,22 @@ body {
 
     .button {
         font-size: 1.2em;
+    }
+
+    /* Ajustes del pie de página para móviles */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1em 0.5em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .left,
+    .footer .right {
+        margin: 0.5em 0;
     }
 }
