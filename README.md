@@ -4,13 +4,15 @@
 
 Este es un sistema web diseñado para el Restaurante Armenio UGAB que permite a los clientes solicitar atención de un mozo, pedir la cuenta y dejar una opinión fácilmente desde su mesa a través de un botón interactivo.
 
+### Sitio en funcionamiento: https://fabriziominardo.github.io/ugab/
+
 ### 🚀 Funcionalidades
 
 - 🛎️ Llamar al mozo: Envía una notificación al personal indicando qué mesa requiere atención.
 
 - 💰 Pedir la cuenta: Notifica al mozo que la mesa desea pagar.
 
-- ✍️ Dejar una opinión: Abre un widget para que el cliente pueda dejar su comentario sobre la experiencia en el restaurante.
+- ✍️ Dejar una opinión: Abre un widget para que el cliente pueda dejar su valoracion sobre la experiencia en el restaurante directamente en el perfil de Google Business.
 
 ### 🛠️ Tecnologías Utilizadas
 
@@ -27,7 +29,7 @@ Este es un sistema web diseñado para el Restaurante Armenio UGAB que permite a 
 - Clona este repositorio:
 
 ```git
-git clone https://github.com/tuusuario/ugab-restaurante.git
+git clone https://github.com/FabrizioMinardo/ugab.git
 ```
 - Abre el proyecto en tu navegador ejecutando el archivo index.html.
 
@@ -61,6 +63,7 @@ Puedes modificar el texto según lo que necesites.
 ### 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
+
 -------------------------------------------------------------------------------------------------------------------
 
 Desarrollado por Fabrizio Minardo para UGAB - Restaurante Armenio.
