@@ -2,7 +2,7 @@
 
 ## 📌 Descripción
 
-Este es un sistema web diseñado para el Restaurante Armenio UGAB que permite a los clientes solicitar atención de un mozo, pedir la cuenta y dejar una opinión fácilmente desde su mesa a través de un botón interactivo.
+Este es un sistema web diseñado para el Restaurante Armenio UGAB que permite a los clientes solicitar atención de un mozo, pedir la cuenta y dejar una opinión fácilmente desde su mesa a través de un botón interactivo. El cliente escanea el codigo QR de la mesa y lo redirige a la pagina del restaurant para realizar su solicitud.
 
 ### Sitio en funcionamiento: https://fabriziominardo.github.io/ugab/
 
