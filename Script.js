@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
-  const TELEGRAM_CHAT_ID = '6126902636';
+  const TELEGRAM_CHAT_IDS = ['6126902636', '5810456705']; 
 
   // Extraer el número de mesa desde la URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -12,16 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
 
     try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message }),
-      });
+      // Enviar el mensaje a cada chat ID
+      for (const chatId of TELEGRAM_CHAT_IDS) {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: chatId, text: message }),
+        });
 
-      if (!response.ok) {
-        throw new Error('Error al enviar el mensaje.');
+        if (!response.ok) {
+          throw new Error(`Error al enviar el mensaje a ${chatId}.`);
+        }
       }
 
+      // Mostrar mensaje de estado
       const statusElement = document.getElementById('status-message');
       statusElement.textContent = statusMessage;
       statusElement.style.display = 'block';
