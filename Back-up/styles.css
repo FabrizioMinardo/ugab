@@ -1,0 +1,183 @@
+/* General */
+/* Estilo global para el cuerpo del documento */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e8e8e8;
+    background: linear-gradient(135deg, #000040, #00006E);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+}
+
+/* Main wrapper */
+/* Contenedor principal para estructurar el contenido */
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+/* Estilo para el encabezado de la página */
+.header {
+    background-color: #00006E;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    margin-bottom: 1em;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 700; /* Negrita fuerte para el título */
+}
+
+.header p {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+}
+
+/* Main container */
+/* Contenedor principal para el contenido */
+.container {
+    text-align: center;
+    padding: 2em;
+}
+
+.container h2 {
+    font-size: 2.2em;
+    color: #e8e8e8;
+    margin-bottom: 0.8em;
+}
+
+.container p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: #d0d0d0;
+}
+
+/* Buttons */
+/* Estilo para los botones de acción */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.button {
+    font-size: 1.4em;
+    padding: 0.8em 1.8em;
+    background-color: #00006E;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #000080; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.button:focus {
+    outline: 3px solid #FFD700; /* Enfasis claro cuando se enfoca */
+}
+
+/* Status Message */
+/* Mensaje de estado para retroalimentación del usuario */
+.status-message {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #004085;
+    color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Widget container for dynamic insertion */
+/* Contenedor para widgets dinámicos */
+.widget-container {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Class to show the widget */
+/* Clase para mostrar el widget cuando sea necesario */
+.widget-visible {
+    display: block;
+}
+
+/* Footer */
+/* Estilo para el pie de página */
+.footer {
+    background-color: #000040;
+    color: #ccc;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Mantiene el pie de página en la parte inferior */
+}
+
+/* Footer content */
+/* Contenido del pie de página */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer .left,
+.footer .right {
+    margin: 0;
+}
+
+/* Responsive Design */
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .container h2 {
+        font-size: 1.8em;
+    }
+
+    .button {
+        font-size: 1.2em;
+    }
+
+    /* Ajustes del pie de página para móviles */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1em 0.5em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .left,
+    .footer .right {
+        margin: 0.5em 0;
+    }
+}

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
-  const TELEGRAM_CHAT_IDS = ['6126902636', '5810456705', '7797691585']; 
+  const TELEGRAM_CHAT_IDS = ['6126902636', '5810456705', '8163107823']; 
 
   // Extraer el número de mesa desde la URL
   const urlParams = new URLSearchParams(window.location.search);

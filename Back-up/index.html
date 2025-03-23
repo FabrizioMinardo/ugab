@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGAB - Restaurante Armenio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Imagenes/ugabicon.png" type="image/png">
+  </head>  
+<body>
+  <div class="main-wrapper">
+    <header class="header">
+      <img src="Imagenes/logougab.png" alt="UGAB" class="logo">
+      <h1>UGAB</h1>
+      <p>Restaurante Armenio</p>
+    </header>
+
+    <main class="container">
+      <h2>¡Bienvenido!</h2>
+      <p>Use los botones para solicitar atención.</p>
+      
+      <div class="buttons">
+        <button id="call-waiter" class="button">
+          🛎️ Llamar al mozo
+        </button>
+        <button id="request-bill" class="button">
+          💰 Pedir la cuenta
+        </button>
+        <button id="leave-review" class="button">
+          ✍️ Dejar una opinión
+        </button>
+      </div>
+
+      <p id="status-message" class="status-message" style="display: none;"></p>
+
+      <div id="widget-container" class="widget-container"></div>
+    </main>
+  </div>
+  
+  <div id="widget-container" class="widget-container"></div>
+  <script src="Script.js"></script>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="left">&copy; 2025 UGAB - Todos los derechos reservados.</p>
+      <p class="right">Desarrollado por: Fabrizio Minardo</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
