@@ -12,7 +12,9 @@ Este es un sistema web diseñado para el Restaurante Armenio UGAB que permite a 
 
 - 💰 Pedir la cuenta: Notifica al mozo que la mesa desea pagar.
 
-- ✍️ Dejar una opinión: Abre un widget para que el cliente pueda dejar su valoracion sobre la experiencia en el restaurante directamente en el perfil de Google Business.
+- ✍️ Dejar una opinión: Redirige al usuario al perfil del restaurante en Google Maps para calificarlo y dejar una reseña.
+
+- Las calificaciones del perfil de Google del restaurante se muestran en la página.
 
 ### 🛠️ Tecnologías Utilizadas
 
@@ -47,6 +49,9 @@ git clone https://github.com/FabrizioMinardo/ugab.git
 - Se enviará un mensaje al bot de Telegram con la solicitud y el número de mesa.
 
 - El personal recibirá la notificación y atenderá la solicitud.
+
+ ## 🎥 Demostración en Video  
+[![Mira el video](https://img.youtube.com/vi/XX0GuPlOQAA/0.jpg)](https://youtube.com/shorts/XX0GuPlOQAA?feature=share)
 
 ### 📌 Personalización
 
