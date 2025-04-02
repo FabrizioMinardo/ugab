@@ -39,7 +39,6 @@ git clone https://github.com/FabrizioMinardo/ugab.git
 
 - Modifica las constantes TELEGRAM_TOKEN y TELEGRAM_CHAT_ID en Script.js con tu información.
 
-
 ### 🎯 Cómo Funciona
 
 - Carga la página en un navegador.
@@ -49,9 +48,6 @@ git clone https://github.com/FabrizioMinardo/ugab.git
 - Se enviará un mensaje al bot de Telegram con la solicitud y el número de mesa.
 
 - El personal recibirá la notificación y atenderá la solicitud.
-
- ## 🎥 Demostración en Video  
-[![Mira el video](https://img.youtube.com/vi/XX0GuPlOQAA/0.jpg)](https://youtube.com/shorts/XX0GuPlOQAA?feature=share)
 
 ### 📌 Personalización
 
