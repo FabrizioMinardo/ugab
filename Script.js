@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('call-waiter').addEventListener('click', () => {
     sendTelegramMessage(
       `🛎️ *Mesa ${tableNumber} necesita un mozo.*`,
-      '¡Listo! El mozo ya lo atenderá.'
+      '¡Gracias por avisar!. El mozo pronto estará con usted.'
     );
   });
 
@@ -56,12 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  document.getElementById('leave-review').addEventListener('click', () => {
-    window.open(
-      'https://www.google.com/maps/place/SERGRAF/@-34.4721345,-58.5131909,20z/data=!4m6!3m5!1s0x95bcb034405182dd:0xc91b4fc80e01a0dc!8m2!3d-34.4720855!4d-58.5125814!16s%2Fg%2F1td0hpn3?entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D',
-      '_blank'
-    );
-  });
+  document.getElementById('leave-review').addEventListener('click', function() {
+    const mapsUrl = "geo:-34.5919341,-58.4312565?q=UGAB+Restaurant";
+    window.location.href = mapsUrl;
+});
 
   const loadReviewWidget = () => {
     if (!widgetLoaded) {
