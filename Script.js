@@ -92,17 +92,26 @@ closePopup.addEventListener('click', () => {
 
 // INSTAGRAM
 document.getElementById('instagram').addEventListener('click', () => {
-  const instagramAppUrl = 'instagram://user?username=ugabcenas';
-  const instagramWebUrl = 'https://www.instagram.com/ugabcenas/';
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // Crea un enlace temporal oculto para mejorar compatibilidad
-  const link = document.createElement('a');
-  link.setAttribute('href', instagramAppUrl);
-  document.body.appendChild(link);
-  link.click();
+  if (isAndroid) {
+    const intentUrl = 'intent://instagram.com/_u/ugabcenas/#Intent;package=com.instagram.android;scheme=https;end';
+    window.location.href = intentUrl;
 
-  // Fallback si no funciona en 1 segundo
-  setTimeout(() => {
-    window.location.href = instagramWebUrl;
-  }, 1000);
+    setTimeout(() => {
+      window.location.href = 'https://www.instagram.com/ugabcenas/';
+    }, 1500);
+  } else if (isIOS) {
+    // iOS: intenta abrir la app, si no funciona, cae al navegador
+    const appUrl = 'instagram://user?username=ugabcenas';
+    window.location.href = appUrl;
+
+    setTimeout(() => {
+      window.location.href = 'https://www.instagram.com/ugabcenas/';
+    }, 1500);
+  } else {
+    // Otros dispositivos (PC, etc.)
+    window.open('https://www.instagram.com/ugabcenas/', '_blank');
+  }
 });
