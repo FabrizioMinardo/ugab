@@ -14,6 +14,10 @@ Este es un sistema web diseñado para el Restaurante Armenio UGAB que permite a 
 
 - ✍️ Dejar una opinión: Redirige al usuario al perfil del restaurante en Google Maps para calificarlo y dejar una reseña.
 
+- 📲 Acceder al Wifi gratuito.
+
+- 📷 Visitar el Instagram del restaurante.
+
 - Las calificaciones del perfil de Google del restaurante se muestran en la página.
 
 ### 🛠️ Tecnologías Utilizadas
@@ -68,4 +72,3 @@ Este proyecto está bajo la Licencia MIT, lo que significa que puedes usarlo, mo
 -------------------------------------------------------------------------------------------------------------------
 
 Desarrollado por Fabrizio Minardo para UGAB - Restaurante Armenio.
-

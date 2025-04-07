@@ -95,11 +95,14 @@ document.getElementById('instagram').addEventListener('click', () => {
   const instagramAppUrl = 'instagram://user?username=ugabcenas';
   const instagramWebUrl = 'https://www.instagram.com/ugabcenas/';
 
-  // Intenta abrir la app
-  window.location.href = instagramAppUrl;
+  // Crea un enlace temporal oculto para mejorar compatibilidad
+  const link = document.createElement('a');
+  link.setAttribute('href', instagramAppUrl);
+  document.body.appendChild(link);
+  link.click();
 
-  // Fallback al sitio web después de un tiempo si no redirige
+  // Fallback si no funciona en 1 segundo
   setTimeout(() => {
-    window.open(instagramWebUrl, '_blank');
-  }, 1500);
+    window.location.href = instagramWebUrl;
+  }, 1000);
 });
