@@ -76,3 +76,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cargar el widget automáticamente
   loadReviewWidget();
 });
+
+// WIFI POPUP
+const wifiButton = document.getElementById('wifi-info');
+const wifiPopup = document.getElementById('wifi-popup');
+const closePopup = document.getElementById('close-popup');
+
+wifiButton.addEventListener('click', () => {
+  wifiPopup.style.display = 'flex';
+});
+
+closePopup.addEventListener('click', () => {
+  wifiPopup.style.display = 'none';
+});
+
+// INSTAGRAM
+document.getElementById('instagram').addEventListener('click', () => {
+  const instagramAppUrl = 'instagram://user?username=ugabcenas';
+  const instagramWebUrl = 'https://www.instagram.com/ugabcenas/';
+
+  // Intenta abrir la app
+  window.location.href = instagramAppUrl;
+
+  // Fallback al sitio web después de un tiempo si no redirige
+  setTimeout(() => {
+    window.open(instagramWebUrl, '_blank');
+  }, 1500);
+});
