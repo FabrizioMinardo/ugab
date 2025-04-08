@@ -80,7 +80,7 @@ body {
     padding: 0.8em 1.8em;
     background-color: #00006E;
     color: #fff;
-    border: none;
+    border: 2px solid white;
     border-radius: 12px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -260,4 +260,17 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.footer-link {
+    text-decoration: underline;
+}
+
+.footer-link a {
+    color: #ffffff;
+    text-decoration: none; /* ya está subrayado por el contenedor */
+}
+
+.footer-link a:hover {
+    color: #FFD700; /* cambia color al pasar el mouse, opcional */
 }
