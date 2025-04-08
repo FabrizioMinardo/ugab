@@ -66,8 +66,6 @@ body {
     color: #d0d0d0;
 }
 
-/* Buttons */
-/* Estilo para los botones de acción */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -80,7 +78,10 @@ body {
     padding: 0.8em 1.8em;
     background-color: #00006E;
     color: #fff;
-    border: 2px solid #ffffff;
+    border: 2px solid #ffffff !important;
+  box-sizing: border-box; /* Asegura que el borde se incluya en el tamaño */
+  -webkit-appearance: none; /* Evita estilos por defecto en Safari */
+  appearance: none;
     border-radius: 12px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2); /* sombra blanca sutil */
@@ -266,10 +267,7 @@ body {
 .footer-link a:visited,
 .footer-link a:active,
 .footer-link a:focus {
-    color: #ffffff;
-    text-decoration: underline;
+  color: #ffffff !important;
+  text-decoration: underline;
 }
 
-.footer-link a:hover {
-    color: #FFD700;
-}
