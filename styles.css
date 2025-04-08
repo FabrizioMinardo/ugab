@@ -80,10 +80,10 @@ body {
     padding: 0.8em 1.8em;
     background-color: #00006E;
     color: #fff;
-    border: 2px solid white;
+    border: 2px solid #ffffff;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2); /* sombra blanca sutil */
     transition: all 0.3s ease;
 }
 
@@ -262,15 +262,14 @@ body {
   }
 }
 
-.footer-link {
+.footer-link a,
+.footer-link a:visited,
+.footer-link a:active,
+.footer-link a:focus {
+    color: #ffffff;
     text-decoration: underline;
 }
 
-.footer-link a {
-    color: #ffffff;
-    text-decoration: none; /* ya está subrayado por el contenedor */
-}
-
 .footer-link a:hover {
-    color: #FFD700; /* cambia color al pasar el mouse, opcional */
+    color: #FFD700;
 }
