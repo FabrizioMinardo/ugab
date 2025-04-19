@@ -115,3 +115,18 @@ document.getElementById('instagram').addEventListener('click', () => {
     window.open('https://www.instagram.com/ugabcenas/', '_blank');
   }
 });
+
+// MENÚ - Abrir PDF desde Google Drive
+document.getElementById('menu').addEventListener('click', () => {
+  window.open('https://drive.google.com/file/d/1iSIihOIpWmOW7IPoTu7nnu0CUCESRrDi/view', '_blank');
+});
+
+// AUSPICIANTES - Descargar PDF
+document.getElementById('sponsors').addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.href = 'Documentos/Revista2025.pdf'; // Ruta relativa al archivo
+  link.download = 'Revista2025.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});

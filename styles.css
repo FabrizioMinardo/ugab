@@ -94,11 +94,10 @@ body {
 }
 
 .button:focus {
-    outline: 3px solid #FFD700; /* Enfasis claro cuando se enfoca */
+    outline: 3px solid #FFD700;
 }
 
 /* Status Message */
-/* Mensaje de estado para retroalimentación del usuario */
 .status-message {
     display: none;
     font-size: 1em;
@@ -129,22 +128,17 @@ body {
     opacity: 0.7;
 }
 
-
-/* Widget container for dynamic insertion */
 /* Contenedor para widgets dinámicos */
 .widget-container {
     display: none;
     margin-top: 20px;
 }
 
-/* Class to show the widget */
-/* Clase para mostrar el widget cuando sea necesario */
 .widget-visible {
     display: block;
 }
 
 /* Footer */
-/* Estilo para el pie de página */
 .footer {
     background-color: #000040;
     color: #ccc;
@@ -155,11 +149,10 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: auto; /* Mantiene el pie de página en la parte inferior */
+    margin-top: auto;
 }
 
 /* Footer content */
-/* Contenido del pie de página */
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -171,7 +164,6 @@ body {
     margin: 0;
 }
 
-/* Responsive Design */
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .header h1 {
@@ -270,4 +262,3 @@ body {
   color: #ffffff !important;
   text-decoration: underline;
 }
-
