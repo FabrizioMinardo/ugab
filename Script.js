@@ -56,10 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  document.getElementById('leave-review').addEventListener('click', function() {
-    const mapsUrl = "geo:-34.5919341,-58.4312565?q=UGAB+Restaurant";
-    window.location.href = mapsUrl;
-});
+  document.getElementById('leave-review').addEventListener('click', () => {
+    window.open(
+      'https://maps.app.goo.gl/oUeDFMRrGFH6rA7J6',
+      '_blank'
+    );
+  });
+  
 
   const loadReviewWidget = () => {
     if (!widgetLoaded) {
