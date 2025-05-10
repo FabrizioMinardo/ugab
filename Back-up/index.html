@@ -24,26 +24,41 @@
         <p class="status-message"></p>
       
         <button id="call-waiter" class="button">🛎️ Llamar al mozo</button>
+        <button id="menu" class="button">📋 Menú</button>
+        <button id="wifi-info" class="button"> - Wifi Gratuito -</button>
         <button id="request-bill" class="button">💰 Pedir la cuenta</button>
-      
+        <button id="sponsors" class="button">Auspiciantes</button>
+        <button id="instagram" class="button"> Instagram</button>
         <button id="leave-review" class="button">✍️ Dejar una opinión</button>
       </div>
-          
+      
+      
+      <!-- POPUP WIFI -->
+      <div id="wifi-popup" class="popup">
+        <div class="popup-content">
+          <p>¡Escanea el código QR que se encuentra en la parte de atras de nuestro menú y accedé a Internet gratis!</p>
+          <button id="close-popup" class="button">Cerrar</button>
+        </div>
+      </div>
+      
       <p id="status-message" class="status-message" style="display: none;"></p>
 
       <div id="widget-container" class="widget-container"></div>
     </main>
   </div>
   
-  <div id="widget-container" class="widget-container"></div>
+
   <script src="Script.js"></script>
 
-  <footer class="footer">
+  <footer class="footer"> 
     <div class="footer-content">
       <p class="left">&copy; 2025 UGAB - Todos los derechos reservados.</p>
-      <p class="right">Desarrollado por: Fabrizio Minardo</p>
+      <p class="right footer-link">
+        <a href="https://www.linkedin.com/in/fabrizio-minardo-programador/" target="_blank" rel="noopener noreferrer">
+          Desarrollado por: Fabrizio Minardo
+        </a>
+      </p>
     </div>
-  </footer>
-  
+  </footer>  
 </body>
 </html>
