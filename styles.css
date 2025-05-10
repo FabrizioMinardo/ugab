@@ -135,7 +135,7 @@ body {
 }
 
 .widget-visible {
-    display: block;
+    display: none;
 }
 
 /* Footer */
