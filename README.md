@@ -65,10 +65,20 @@ const messages = {
 ```
 Puedes modificar el texto según lo que necesites.
 
-### 📄 Licencia
+## ⚠️ Derechos de Autor
 
-Este proyecto está bajo la Licencia MIT, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
+Este proyecto fue legalmente registrado como **obra inédita - software** ante la Dirección Nacional del Derecho de Autor (Argentina) bajo el expediente:
 
--------------------------------------------------------------------------------------------------------------------
+**EX-2025-81431364- -APN-DNDA#MJ**
 
-Desarrollado por Fabrizio Minardo para UGAB - Restaurante Armenio.
+Este software está protegido por derechos de autor conforme a la Ley N° 11.723.
+
+No está permitido copiar, modificar, distribuir o usar este software sin autorización expresa y por escrito del autor.
+
+Cualquier uso indebido puede ser sancionado legalmente.
+
+---
+
+Para consultas o licencias, contactarse con:  
+**Fabrizio Gabriel Bustos Minardo**  
+minardofabrizio@gmail.com

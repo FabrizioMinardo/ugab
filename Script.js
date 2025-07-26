@@ -1,3 +1,10 @@
+/*
+  © 2025 Fabrizio Gabriel Bustos Minardo
+  Registrado ante la DNDA - Argentina
+  Expediente: EX-2025-81431364- -APN-DNDA#MJ
+  Queda prohibida su reproducción o modificación sin autorización expresa.
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
   const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
   const TELEGRAM_CHAT_IDS = ['7814346062']; 
