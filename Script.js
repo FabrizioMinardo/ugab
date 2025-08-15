@@ -128,7 +128,7 @@ document.getElementById('instagram').addEventListener('click', () => {
 
 // MENÚ - Abrir PDF desde Google Drive
 document.getElementById('menu').addEventListener('click', () => {
-  window.open('https://drive.google.com/file/d/1iSIihOIpWmOW7IPoTu7nnu0CUCESRrDi/view', '_blank');
+  window.open('https://drive.google.com/file/d/1bCie0M_srH--t5OWWGSF0gGhSO-7SjT2/view?usp=sharing', '_blank');
 });
 
 // AUSPICIANTES - Descargar PDF
