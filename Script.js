@@ -6,73 +6,53 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
-  const TELEGRAM_CHAT_IDS = ['7814346062']; 
-
   const urlParams = new URLSearchParams(window.location.search);
   const tableNumber = urlParams.get('table') || 'Desconocida';
 
   let widgetLoaded = false;
-  const buttons = document.querySelectorAll('.button');
 
- const sendTelegramMessage = async (message, statusMessage) => {
-  const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+// Google Form prellenado
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdy4f4bKH9KD4SrQi_g-GaquOkRKZ_AEOVRRRGa6oBtnPI1zw/viewform?usp=pp_url";
+const ENTRY_TABLE = "entry.574053251";  // Campo Mesa
+const ENTRY_REQUEST = "entry.1893378574"; // Campo Solicitud (mozo/cuenta)
 
-  try {
-    for (const chatId of TELEGRAM_CHAT_IDS) {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: "Markdown" // 👈 agregado
-        }),
-      });
+const openPrefilledForm = (requestType) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const tableNumber = urlParams.get('table') || 'Desconocida';
 
-      const data = await response.json(); // 👈 ver respuesta real
-      if (!response.ok) {
-        throw new Error(`Error Telegram: ${data.description}`);
-      }
-    }
+  // Construir URL prellenada
+  const prefillUrl = `${FORM_URL}&${ENTRY_TABLE}=${encodeURIComponent(tableNumber)}&${ENTRY_REQUEST}=${encodeURIComponent(requestType)}`;
 
-    const statusElement = document.querySelector('.status-message');
-    statusElement.textContent = statusMessage;
-    statusElement.classList.add('show');
+  // Abrir el formulario en nueva pestaña (Make detecta el envío)
+  window.open(prefillUrl, '_blank');
 
-    document.getElementById('call-waiter').disabled = true;
-    document.getElementById('call-waiter').classList.add('disabled-button');
+  // Mostrar mensaje de estado
+  const statusElement = document.querySelector('.status-message');
+  statusElement.textContent = requestType === '🛎️ Necesita un mozo' ? 
+    '¡Gracias por avisar!. El mozo pronto estará con usted.' : 
+    'El mozo pronto le traerá la cuenta. Gracias por elegirnos.';
+  statusElement.classList.add('show');
 
-    document.getElementById('request-bill').disabled = true;
-    document.getElementById('request-bill').classList.add('disabled-button');
+  // Deshabilitar botones después de usarlos
+  document.getElementById('call-waiter').disabled = true;
+  document.getElementById('call-waiter').classList.add('disabled-button');
 
-  } catch (error) {
-    alert('Hubo un problema al conectar con el servidor.');
-    console.error("❌ Error Telegram:", error);
-  }
+  document.getElementById('request-bill').disabled = true;
+  document.getElementById('request-bill').classList.add('disabled-button');
 };
 
-  document.getElementById('call-waiter').addEventListener('click', () => {
-    sendTelegramMessage(
-      `🛎️ *Mesa ${tableNumber} necesita un mozo.*`,
-      '¡Gracias por avisar!. El mozo pronto estará con usted.'
-    );
-  });
+// Asignar eventos a los botones
+document.getElementById('call-waiter').addEventListener('click', () => {
+  openPrefilledForm('🛎️ Necesita un mozo');
+});
 
-  document.getElementById('request-bill').addEventListener('click', () => {
-    sendTelegramMessage(
-      `🧾 *Mesa ${tableNumber} solicita la cuenta.*`,
-      'El mozo pronto le traerá la cuenta. Gracias por elegirnos.'
-    );
-  });
+document.getElementById('request-bill').addEventListener('click', () => {
+  openPrefilledForm('🧾 Solicita la cuenta');
+});
 
   document.getElementById('leave-review').addEventListener('click', () => {
-    window.open(
-      'https://maps.app.goo.gl/oUeDFMRrGFH6rA7J6',
-      '_blank'
-    );
+    window.open('https://maps.app.goo.gl/oUeDFMRrGFH6rA7J6', '_blank');
   });
-  
 
   const loadReviewWidget = () => {
     if (!widgetLoaded) {
@@ -86,11 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Cargar el widget automáticamente
   loadReviewWidget();
 });
 
-// WIFI POPUP
+// ===== WIFI POPUP =====
 const wifiButton = document.getElementById('wifi-info');
 const wifiPopup = document.getElementById('wifi-popup');
 const closePopup = document.getElementById('close-popup');
@@ -103,7 +82,7 @@ closePopup.addEventListener('click', () => {
   wifiPopup.style.display = 'none';
 });
 
-// INSTAGRAM
+// ===== INSTAGRAM =====
 document.getElementById('instagram').addEventListener('click', () => {
   const isAndroid = /Android/i.test(navigator.userAgent);
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -111,33 +90,29 @@ document.getElementById('instagram').addEventListener('click', () => {
   if (isAndroid) {
     const intentUrl = 'intent://instagram.com/_u/ugabcenas/#Intent;package=com.instagram.android;scheme=https;end';
     window.location.href = intentUrl;
-
     setTimeout(() => {
       window.location.href = 'https://www.instagram.com/ugabcenas/';
     }, 1500);
   } else if (isIOS) {
-    // iOS: intenta abrir la app, si no funciona, cae al navegador
     const appUrl = 'instagram://user?username=ugabcenas';
     window.location.href = appUrl;
-
     setTimeout(() => {
       window.location.href = 'https://www.instagram.com/ugabcenas/';
     }, 1500);
   } else {
-    // Otros dispositivos (PC, etc.)
     window.open('https://www.instagram.com/ugabcenas/', '_blank');
   }
 });
 
-// MENÚ - Abrir PDF desde Google Drive
+// ===== MENÚ PDF =====
 document.getElementById('menu').addEventListener('click', () => {
   window.open('https://drive.google.com/file/d/1bCie0M_srH--t5OWWGSF0gGhSO-7SjT2/view?usp=sharing', '_blank');
 });
 
-// AUSPICIANTES - Descargar PDF
+// ===== AUSPICIANTES PDF =====
 document.getElementById('sponsors').addEventListener('click', () => {
   const link = document.createElement('a');
-  link.href = 'Documentos/Revista2025.pdf'; // Ruta relativa al archivo
+  link.href = 'Documentos/Revista2025.pdf';
   link.download = 'Revista2025.pdf';
   document.body.appendChild(link);
   link.click();
