@@ -15,38 +15,41 @@ document.addEventListener('DOMContentLoaded', () => {
   let widgetLoaded = false;
   const buttons = document.querySelectorAll('.button');
 
-  const sendTelegramMessage = async (message, statusMessage) => {
-    const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+ const sendTelegramMessage = async (message, statusMessage) => {
+  const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
 
-    try {
-        for (const chatId of TELEGRAM_CHAT_IDS) {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: chatId, text: message }),
-            });
+  try {
+    for (const chatId of TELEGRAM_CHAT_IDS) {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "Markdown" // 👈 agregado
+        }),
+      });
 
-            if (!response.ok) {
-                throw new Error(`Error al enviar el mensaje a ${chatId}.`);
-            }
-        }
-
-        // Mostrar mensaje sobre los botones
-        const statusElement = document.querySelector('.status-message');
-        statusElement.textContent = statusMessage;
-        statusElement.classList.add('show');
-
-        // Deshabilitar solo los botones de "Llamar al mozo" y "Pedir la cuenta"
-        document.getElementById('call-waiter').disabled = true;
-        document.getElementById('call-waiter').classList.add('disabled-button');
-
-        document.getElementById('request-bill').disabled = true;
-        document.getElementById('request-bill').classList.add('disabled-button');
-
-    } catch (error) {
-        alert('Hubo un problema al conectar con el servidor.');
-        console.error(error);
+      const data = await response.json(); // 👈 ver respuesta real
+      if (!response.ok) {
+        throw new Error(`Error Telegram: ${data.description}`);
+      }
     }
+
+    const statusElement = document.querySelector('.status-message');
+    statusElement.textContent = statusMessage;
+    statusElement.classList.add('show');
+
+    document.getElementById('call-waiter').disabled = true;
+    document.getElementById('call-waiter').classList.add('disabled-button');
+
+    document.getElementById('request-bill').disabled = true;
+    document.getElementById('request-bill').classList.add('disabled-button');
+
+  } catch (error) {
+    alert('Hubo un problema al conectar con el servidor.');
+    console.error("❌ Error Telegram:", error);
+  }
 };
 
   document.getElementById('call-waiter').addEventListener('click', () => {
