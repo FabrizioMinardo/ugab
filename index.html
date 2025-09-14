@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UGAB - Restaurante Armenio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="Imagenes/ugabicon.png" type="image/png">
-  </head>  
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGAB - Restaurante Armenio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="Imagenes/ugabicon.png" type="image/png">
+</head>
+
 <body>
   <div class="main-wrapper">
     <header class="header">
@@ -19,38 +21,34 @@
     <main class="container">
       <h2>¡Bienvenido!</h2>
       <p>Use los botones para solicitar atención.</p>
-      
+
       <div class="buttons">
+        <button id="call-waiter" class="button" type="button">🛎️ Llamar Mozo</button>
+        <button id="request-bill" class="button" type="button">🧾 Pedir Cuenta</button>
         <p class="status-message"></p>
-      
-        <button id="call-waiter" class="button">🛎️ Llamar al mozo</button>
-        <button id="menu" class="button">📋 Menú</button>
-        <button id="wifi-info" class="button"> - Wifi Gratuito -</button>
-        <button id="request-bill" class="button">💰 Pedir la cuenta</button>
-        <button id="sponsors" class="button">Auspiciantes</button>
-        <button id="instagram" class="button"> Instagram</button>
-        <button id="leave-review" class="button">✍️ Dejar una opinión</button>
+        <button id="menu" class="button" type="button">📋 Menú</button>
+        <button id="wifi-info" class="button" type="button"> - Wifi Gratuito -</button>
+        <button id="sponsors" class="button" type="button">Auspiciantes</button>
+        <button id="instagram" class="button" type="button"> Instagram</button>
+        <button id="leave-review" class="button" type="button">✍️ Dejar una opinión</button>
       </div>
-      
-      
+
       <!-- POPUP WIFI -->
       <div id="wifi-popup" class="popup">
         <div class="popup-content">
-          <p>¡Escanea el código QR que se encuentra en la parte de atras de nuestro menú y accedé a Internet gratis!</p>
-          <button id="close-popup" class="button">Cerrar</button>
+          <p>¡Escanea el código QR que se encuentra en la parte de atrás de nuestro menú y accedé a Internet gratis!</p>
+          <button id="close-popup" class="button" type="button">Cerrar</button>
         </div>
       </div>
-      
-      <p id="status-message" class="status-message" style="display: none;"></p>
 
+      <!-- Widget reseñas -->
       <div id="widget-container" class="widget-container"></div>
     </main>
   </div>
-  
 
-  <script src="Script.js"></script>
+  <script src="Script.js" defer></script>
 
-  <footer class="footer"> 
+  <footer class="footer">
     <div class="footer-content">
       <p class="left">&copy; 2025 UGAB - Todos los derechos reservados.</p>
       <p class="right footer-link">
@@ -59,6 +57,7 @@
         </a>
       </p>
     </div>
-  </footer>  
+  </footer>
 </body>
+
 </html>
