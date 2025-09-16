@@ -6,54 +6,72 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const TELEGRAM_TOKEN = '7800730518:AAG2x11gxrhZQvDCjI6ITY4YTT7-uMLQP8Y';
+  const TELEGRAM_CHAT_IDS = ['7814346062']; // Podés agregar más IDs si querés
+
   const urlParams = new URLSearchParams(window.location.search);
   const tableNumber = urlParams.get('table') || 'Desconocida';
 
   let widgetLoaded = false;
 
-// Google Form prellenado
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdy4f4bKH9KD4SrQi_g-GaquOkRKZ_AEOVRRRGa6oBtnPI1zw/viewform?usp=pp_url";
-const ENTRY_TABLE = "entry.574053251";  // Campo Mesa
-const ENTRY_REQUEST = "entry.1893378574"; // Campo Solicitud (mozo/cuenta)
+  // ==== Función para enviar mensajes a Telegram ====
+  const sendTelegramMessage = async (message, statusMessage) => {
+    const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+    try {
+      for (const chatId of TELEGRAM_CHAT_IDS) {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: "Markdown"
+          }),
+        });
 
-const openPrefilledForm = (requestType) => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const tableNumber = urlParams.get('table') || 'Desconocida';
+        if (!response.ok) {
+          throw new Error(`Error al enviar el mensaje a ${chatId}.`);
+        }
+      }
 
-  // Construir URL prellenada
-  const prefillUrl = `${FORM_URL}&${ENTRY_TABLE}=${encodeURIComponent(tableNumber)}&${ENTRY_REQUEST}=${encodeURIComponent(requestType)}`;
+      // Mostrar mensaje sobre los botones
+      const statusElement = document.querySelector('.status-message');
+      statusElement.textContent = statusMessage;
+      statusElement.classList.add('show');
 
-  // Abrir el formulario en nueva pestaña (Make detecta el envío)
-  window.open(prefillUrl, '_blank');
+      // Deshabilitar solo los botones de "Llamar al mozo" y "Pedir la cuenta"
+      document.getElementById('call-waiter').disabled = true;
+      document.getElementById('call-waiter').classList.add('disabled-button');
 
-  // Mostrar mensaje de estado
-  const statusElement = document.querySelector('.status-message');
-  statusElement.textContent = requestType === '🛎️ Necesita un mozo' ? 
-    '¡Gracias por avisar!. El mozo pronto estará con usted.' : 
-    'El mozo pronto le traerá la cuenta. Gracias por elegirnos.';
-  statusElement.classList.add('show');
+      document.getElementById('request-bill').disabled = true;
+      document.getElementById('request-bill').classList.add('disabled-button');
 
-  // Deshabilitar botones después de usarlos
-  document.getElementById('call-waiter').disabled = true;
-  document.getElementById('call-waiter').classList.add('disabled-button');
+    } catch (error) {
+      alert('Hubo un problema al conectar con Telegram.');
+      console.error(error);
+    }
+  };
 
-  document.getElementById('request-bill').disabled = true;
-  document.getElementById('request-bill').classList.add('disabled-button');
-};
+  // ==== Botones principales ====
+  document.getElementById('call-waiter').addEventListener('click', () => {
+    sendTelegramMessage(
+      `🛎️ *Mesa ${tableNumber} necesita un mozo.*`,
+      '¡Gracias por avisar! El mozo pronto estará con usted.'
+    );
+  });
 
-// Asignar eventos a los botones
-document.getElementById('call-waiter').addEventListener('click', () => {
-  openPrefilledForm('🛎️ Necesita un mozo');
-});
-
-document.getElementById('request-bill').addEventListener('click', () => {
-  openPrefilledForm('🧾 Solicita la cuenta');
-});
-
+  document.getElementById('request-bill').addEventListener('click', () => {
+    sendTelegramMessage(
+      `🧾 *Mesa ${tableNumber} solicita la cuenta.*`,
+      'El mozo pronto le traerá la cuenta. Gracias por elegirnos.'
+    );
+  });
+  // Dejar Reseña
   document.getElementById('leave-review').addEventListener('click', () => {
     window.open('https://maps.app.goo.gl/oUeDFMRrGFH6rA7J6', '_blank');
   });
 
+  // Widget de calificaciones
   const loadReviewWidget = () => {
     if (!widgetLoaded) {
       const widgetContainer = document.getElementById('widget-container');
