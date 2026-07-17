@@ -124,7 +124,7 @@ document.getElementById('instagram').addEventListener('click', () => {
 
 // ===== MENÚ PDF =====
 document.getElementById('menu').addEventListener('click', () => {
-  window.open('https://drive.google.com/file/d/1r9s1MTA29-PE-7BW-JmsW3xp695yEeJN/view?usp=sharing', '_blank');
+  window.open('https://drive.google.com/file/d/1j_KvDa_jl7eH5wKEJK13xVgTpLUOLKzn/view?usp=sharing', '_blank');
 });
 
 // ===== AUSPICIANTES PDF =====
