@@ -127,12 +127,10 @@ document.getElementById('menu').addEventListener('click', () => {
   window.open('https://drive.google.com/file/d/1j_KvDa_jl7eH5wKEJK13xVgTpLUOLKzn/view?usp=sharing', '_blank');
 });
 
-// ===== AUSPICIANTES PDF =====
+// ===== VIDEO DE AUSPICIANTES =====
 document.getElementById('sponsors').addEventListener('click', () => {
-  const link = document.createElement('a');
-  link.href = 'Documentos/Revista2025.pdf';
-  link.download = 'Revista2025.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  window.open(
+    'https://drive.google.com/file/d/1LOqD-SVr7xKlb2beEwnc65uVo57-tyW8/view?usp=sharing',
+    '_blank'
+  );
 });
